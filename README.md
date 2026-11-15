@@ -45,6 +45,7 @@ inventory-system-wd3/
 │   └── productRoutes.js       # connects URLs to controller functions
 ├── .env.example               # sample environment variables
 ├── package.json
+├── seed.js                    # optional: adds 12 sample products for testing
 └── server.js                  # starts the server and connects to MongoDB
 ```
 
@@ -150,6 +151,15 @@ Send each line below as a separate `POST /api/products` request (12 products in 
 
 Four of these products (Bluetooth Speaker, Denim Jeans, Study Table and A4 Notebook) start at or below their reorder level, so they appear in the low-stock report.
 </details>
+
+### ⚡ Quick way to add the sample data
+Instead of creating the 12 products by hand, run this one command in the terminal:
+
+```bash
+npm run seed
+```
+
+⚠️ This **deletes all existing products** in the database first, then adds the 12 sample products. Use it only on a test database. It uses the same `MONGO_URI` from your `.env` file.
 
 ### ✅ Test checklist
 
